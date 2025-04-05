@@ -1,0 +1,55 @@
+.wallet-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #2d313a; /* Dark background */
+    border-radius: 8px;
+    min-width: 200px; /* Ensure it has some width */
+    color: #e0e0e0; /* Light text */
+  }
+  
+  .wallet-button {
+    background-color: #4a72ff; /* Primary button blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .wallet-button:hover {
+    background-color: #3a5ccc;
+  }
+  
+  .wallet-button.install-button {
+    background-color: #f39c12; /* Orange for install prompt */
+  }
+  .wallet-button.install-button:hover {
+    background-color: #d35400;
+  }
+  
+  .wallet-info {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between elements */
+    font-size: 0.95em;
+  }
+  
+  .wallet-address {
+    font-family: monospace; /* Good for addresses */
+    background-color: #444853; /* Slightly different background */
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+  }
+  
+  .error-message {
+    color: #ff4d4d; /* Red for errors */
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-align: center;
+  }
+  

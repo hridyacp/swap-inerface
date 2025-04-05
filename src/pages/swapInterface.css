@@ -1,0 +1,301 @@
+.dark-mode {
+    background-color: #1a1b1f; /* Dark background */
+    color: #e0e0e0; /* Light grey text */
+    font-family: sans-serif;
+    min-height: 100vh; /* Full height */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .swap-container {
+    max-width: 900px; /* Limit overall width */
+    margin: 40px auto; /* Center on page */
+    padding: 30px;
+    background-color: #252830; /* Slightly lighter card background */
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Header Styles */
+  .swap-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #444; /* Separator line */
+  }
+  
+  .swap-header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #fff;
+  }
+  
+  .connect-wallet-btn {
+    background-color: #4a72ff; /* Primary button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .connect-wallet-btn:hover {
+    background-color: #3a5ccc;
+  }
+  
+  .connect-wallet-btn.disconnect-btn {
+      background-color: #555;
+  }
+  .connect-wallet-btn.disconnect-btn:hover {
+      background-color: #777;
+  }
+  
+  
+  .wallet-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-family: monospace;
+      background-color: #333;
+      padding: 5px 10px;
+      border-radius: 6px;
+  }
+  
+  /* Swap Body Layout (Side-by-Side) */
+  .swap-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Space between boxes and switch button */
+    margin-bottom: 30px;
+  }
+  
+  /* Individual Swap Box Styles */
+  .swap-box {
+    background-color: #1e2025; /* Darker inner boxes */
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #3a3f4b;
+    flex: 1; /* Make boxes take equal space */
+    min-width: 300px; /* Prevent boxes from becoming too narrow */
+  }
+  
+  .swap-box h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.4em;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  /* Input Group Styling */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #aaa;
+  }
+  
+  .input-group select,
+  .input-group input[type="text"],
+  .input-group input[type="number"] { /* Target both text and number for consistency */
+    width: 100%;
+    background-color: #2d313a; /* Dark input background */
+    border: 1px solid #444;
+    color: #e0e0e0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    box-sizing: border-box; /* Include padding in width */
+    appearance: none; /* Remove default system appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  .input-group select {
+       /* Add custom dropdown arrow */
+      background-image: url('data:image/svg+xml;utf8,<svg fill="lightgrey" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 40px; /* Make space for arrow */
+      cursor: pointer;
+  }
+  
+  
+  .input-group input:focus,
+  .input-group select:focus {
+    outline: none;
+    border-color: #4a72ff; /* Highlight on focus */
+    box-shadow: 0 0 0 2px rgba(74, 114, 255, 0.3);
+  }
+  
+  .input-group select:disabled,
+  .input-group input:disabled {
+      background-color: #383c45;
+      cursor: not-allowed;
+      opacity: 0.6;
+  }
+  
+  
+  .asset-input-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+  }
+  
+  .asset-input-row select {
+      flex-basis: 120px; /* Fixed width for asset selector */
+      flex-shrink: 0;
+  }
+  
+  .asset-input-row input {
+      flex-grow: 1; /* Input takes remaining space */
+      text-align: right;
+  }
+  
+  .balance-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85em;
+      color: #aaa;
+      margin-top: 8px;
+      height: 25px; /* Keep height consistent even when empty */
+  }
+  .balance-info.placeholder {
+      visibility: hidden; /* Use visibility to maintain layout */
+  }
+  
+  
+  .max-button {
+      background-color: transparent;
+      border: 1px solid #4a72ff;
+      color: #4a72ff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8em;
+      transition: all 0.2s ease;
+  }
+  
+  .max-button:hover:not(:disabled) {
+      background-color: rgba(74, 114, 255, 0.1);
+  }
+  .max-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      border-color: #555;
+      color: #888;
+  }
+  
+  
+  /* Switch Button Styles */
+  .switch-button-container {
+    display: flex;
+    align-items: center; /* Vertically center button */
+    justify-content: center;
+     /* Allow container to shrink */
+     flex-shrink: 0;
+     align-self: center; /* Center self vertically in the flex container */
+     margin-top: 50px; /* Push down slightly to align better visually */
+  }
+  
+  .switch-button {
+    background-color: #3a3f4b;
+    border: 1px solid #555;
+    color: #e0e0e0;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .switch-button:hover:not(:disabled) {
+    background-color: #4a4f5b;
+     transform: rotate(180deg);
+  }
+  .switch-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+  }
+  
+  .destination-amount-display {
+      background-color: #2d313a !important; /* Ensure consistent bg even if disabled */
+      opacity: 1 !important; /* Ensure text is readable */
+       cursor: default !important;
+  }
+  
+  /* Action Area */
+  .action-area {
+      margin-top: 30px;
+      text-align: center;
+  }
+  
+  .swap-confirm-btn {
+      background-color: #28a745; /* Green for confirm */
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      width: 80%; /* Make button wider */
+      max-width: 400px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+  }
+  
+  .swap-confirm-btn:hover:not(:disabled) {
+      background-color: #218838;
+  }
+  
+  .swap-confirm-btn:disabled {
+      background-color: #555;
+      cursor: not-allowed;
+      opacity: 0.6;
+  }
+  
+  /* Add media queries for responsiveness if needed */
+  @media (max-width: 768px) {
+      .swap-body {
+          flex-direction: column;
+          align-items: stretch;
+      }
+      .switch-button-container {
+          margin: 15px 0;
+          transform: rotate(90deg); /* Rotate arrow for vertical layout */
+          align-self: center; /* Re-center */
+      }
+       .swap-box {
+          min-width: unset; /* Remove min-width on smaller screens */
+      }
+      .swap-confirm-btn {
+          width: 100%;
+      }
+  }
+
+.swap-box.disabled-box {
+    opacity: 0.6;
+    pointer-events: none; /* Prevent interaction with disabled elements inside */
+    border-color: #444;
+}
+
+.swap-box.disabled-box select,
+.swap-box.disabled-box input {
+    background-color: #383c45 !important; /* Use !important carefully if needed */
+    cursor: not-allowed;
+}
